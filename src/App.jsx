@@ -2,13 +2,17 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'primeicons/primeicons.css';
-import Register from './components/form';
+ import Child from './components/STATE_LIFTING/Child';
 
 function App() {
+  const handleChildData = (data) => {
+    console.log(data);
+  }
   return (
     <>
      <div className="App">
-      <Register />
+      <Child onChildData={handleChildData} />  
+      
       </div>
       
     </>
