@@ -2,17 +2,15 @@
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'primeicons/primeicons.css';
- import Child from './components/STATE_LIFTING/Child';
+import Home from './components/STATE_LIFTING/Home';
+
 
 function App() {
-  const handleChildData = (data) => {
-    console.log(data);
-  }
+
   return (
     <>
      <div className="App">
-      <Child onChildData={handleChildData} />  
-      
+        <Home/>
       </div>
       
     </>
