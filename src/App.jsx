@@ -1,8 +1,9 @@
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import 'primeicons/primeicons.css';
-import Home from './components/STATE_LIFTING/Home';
+
+import Layout from './components/TODO_PROJECT/Layout';
+
 
 
 function App() {
@@ -10,7 +11,7 @@ function App() {
   return (
     <>
      <div className="App">
-        <Home/>
+       <Layout />
       </div>
       
     </>
