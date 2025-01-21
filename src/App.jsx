@@ -1,13 +1,14 @@
 
 import './App.css'
 import 'bootstrap/dist/css/bootstrap.min.css';
-import UseReducer from './components/USE_REDUCER/Index'
+import ReducerExample from './components/REDUCER/index.jsx'
 
 function App() {
   return (
     <>
      <div className="card">
-        <UseReducer/>
+        <h2>React Reducer Practice</h2>
+        <ReducerExample/>
       </div>
     </>
   )
