@@ -3,7 +3,7 @@ import Table from 'react-bootstrap/Table';
 import Column from "./Column";
 import { useBooksContext } from '../../HOOKS/BooksContext';
 
-function Tables() {
+function Tables({dispatch}) {
   
   const {books}=useBooksContext();
    
@@ -18,7 +18,7 @@ function Tables() {
     </thead>
     <tbody>
       {books.map((book,index)=>{
-          return <Column key={index} book={book}  />
+          return <Column key={index} book={book}  dispatch={dispatch} />
       })}
     </tbody>
   </Table>

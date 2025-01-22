@@ -1,28 +1,23 @@
-import React, { useContext, useState } from "react";
+import React, { useState, useReducer } from "react";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import InputGroup from "react-bootstrap/InputGroup";
 
 import { useBooksContext } from "../../HOOKS/BooksContext";
-
-function AddItem({ setMessage, setIsAlert }) {
-  // const { books, setBooks } = useContext(UsersContext);
-  const {setBooks}=useBooksContext()
-
+function AddItem({ dispatch }) {
+  const { setBooks } = useBooksContext();
   const [bookName, setBookName] = useState("");
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (bookName.trim() === "") {
-      setMessage("Item name cannot be empty!");
-      setIsAlert(true);
+      dispatch({ type: "SET_MESSAGE", payload: "Please enter an item name." });
       return;
     }
 
     const newBook = { id: new Date().getTime().toString(), name: bookName };
     setBooks((prevState) => [...prevState, newBook]);
-    setMessage("New item added successfully!");
-    setIsAlert(true);
+    dispatch({ type: "SET_MESSAGE", payload: "Item is added!" });
     setBookName("");
   };
 

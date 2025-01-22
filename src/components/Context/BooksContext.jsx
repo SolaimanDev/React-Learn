@@ -1,6 +1,6 @@
 import {createContext,useState } from "react";
  
-export const UsersContext = createContext({});
+export const BooksContext = createContext({});
 
 const BooksProvider=({children})=>{
     const booksData = [
@@ -11,8 +11,8 @@ const BooksProvider=({children})=>{
     
       const [books, setBooks] = useState(booksData);
 
-      return <UsersContext.Provider value={{ books, setBooks }}>
+      return <BooksContext.Provider value={{ books, setBooks }}>
         {children}
-      </UsersContext.Provider>
+      </BooksContext.Provider>
 }
 export default BooksProvider
